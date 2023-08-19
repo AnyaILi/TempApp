@@ -14,6 +14,7 @@
 		61F2B86B2A91682E00272C11 /* TempAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F2B86A2A91682E00272C11 /* TempAppTests.swift */; };
 		61F2B8752A91682E00272C11 /* TempAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F2B8742A91682E00272C11 /* TempAppUITests.swift */; };
 		61F2B8772A91682E00272C11 /* TempAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F2B8762A91682E00272C11 /* TempAppUITestsLaunchTests.swift */; };
+		61F2B8842A916AE200272C11 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F2B8832A916AE200272C11 /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		61F2B8702A91682E00272C11 /* TempAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F2B8742A91682E00272C11 /* TempAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAppUITests.swift; sourceTree = "<group>"; };
 		61F2B8762A91682E00272C11 /* TempAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		61F2B8832A916AE200272C11 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				61F2B8592A91682B00272C11 /* TempAppApp.swift */,
 				61F2B85B2A91682B00272C11 /* ContentView.swift */,
+				61F2B8832A916AE200272C11 /* LogInView.swift */,
 				61F2B85D2A91682E00272C11 /* Assets.xcassets */,
 				61F2B85F2A91682E00272C11 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F2B8842A916AE200272C11 /* LogInView.swift in Sources */,
 				61F2B85C2A91682B00272C11 /* ContentView.swift in Sources */,
 				61F2B85A2A91682B00272C11 /* TempAppApp.swift in Sources */,
 			);
