@@ -4,26 +4,25 @@
 //
 //  Created by Anya Li on 8/19/23.
 //
-
+import MapKit
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = ContentViewModel()
+    
     var body: some View {
-        ZStack{
-            Color(hex: "CDD7B6" )
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Image("")
-            }
-            .padding()
-        }
+        
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+            .ignoresSafeArea()
+            .onAppear(perform: {
+                viewModel.checkIfLocationServicesIsEnabled()
+            })
     }
 }
 
 #Preview {
     ContentView()
 }
-
 
 extension Color {
     init(hex: String) {
