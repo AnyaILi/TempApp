@@ -6,10 +6,12 @@
 //
 import MapKit
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
-    
+    @State private var locationManager = CLLocationManager()
+    @State private var region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 37.331516, longitude: -121.891054), radius: 1000, identifier: "Apple HQ")
     var body: some View {
         
         Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
@@ -17,6 +19,40 @@ struct ContentView: View {
             .onAppear(perform: {
                 viewModel.checkIfLocationServicesIsEnabled()
             })
+        VStack {
+            Button("Start Monitoring") {
+                self.locationManager.startMonitoring(for: self.region)
+                print("started")
+            }
+            Button("Request Permission") {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        print("All set!")
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
+
+            }
+
+            Button("Schedule Notification") {
+                let content = UNMutableNotificationContent()
+                content.title = "Feed the cat"
+                content.subtitle = "It looks hungry"
+                content.sound = UNNotificationSound.default
+
+                // show this notification five seconds from now
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+                // choose a random identifier
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                // add our notification request
+                UNUserNotificationCenter.current().add(request)
+                print("done")
+            }
+        }
+
     }
 }
 
